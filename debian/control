@@ -1,0 +1,14 @@
+Source: anything-sync-daemon
+Section: utils
+Priority: extra
+Maintainer: graysky <graysky@archlinux.us>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.4
+Homepage: https://wiki.archlinux.org/index.php/Profile-sync-daemon
+#Vcs-Git: git://git.debian.org/collab-maint/profile-sync-daemon.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/profile-sync-daemon.git;a=summary
+
+Package: anything-sync-daemon
+Architecture: all
+Depends: ,rsync,systemd
+Description: Anything-sync-daemon (asd) is a tiny pseudo-daemon designed to manage user defined dirs in tmpfs and to periodically sync back to the physical disc.
