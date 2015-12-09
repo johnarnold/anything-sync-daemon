@@ -16,7 +16,6 @@ case "$1" in
 		for i in $(users); do
 			if [ "$(su $i -c 'XDG_RUNTIME_DIR=/run/user/$UID systemctl --user is-active asd')" = "active" ]; then
 				echo "--> In order to preserve your data, asd service will be stopped now."
-				echo "--> Any running and managed browsers will be exited."
 				su $i -c 'XDG_RUNTIME_DIR=/run/user/$UID systemctl --user stop asd.service'
 				su $i -c 'XDG_RUNTIME_DIR=/run/user/$UID systemctl --user disable asd.service'
 			fi

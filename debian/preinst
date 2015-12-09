@@ -2,16 +2,7 @@
 set -e
 case "$1" in
 	install|upgrade)
-		# version 5.69 is a user daemon so clear out old system level files
-
-		if [ -f /usr/lib/systemd/system/asd.service ]; then
-			[ "$(systemctl is-enabled asd)" = "enabled" ] &&
-				systemctl disable asd.service &>/dev/null
-
-			[ "$(systemctl is-active asd)" = "active" ] &&
-				systemctl stop asd.service &>/dev/null
-		fi
-
+		
 		for i in $(users); do
 			if [ "$(su $i -c 'XDG_RUNTIME_DIR=/run/user/$UID systemctl --user is-active asd')" = "active" ]; then
 				echo "--> Internal changes to asd require it to be stopped before the update."

@@ -4,7 +4,7 @@ Priority: extra
 Maintainer: graysky <graysky@archlinux.us>
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.4
-Homepage: https://wiki.archlinux.org/index.php/Profile-sync-daemon
+Homepage: https://wiki.archlinux.org/index.php/Anything-sync-daemon
 #Vcs-Git: git://git.debian.org/collab-maint/profile-sync-daemon.git
 #Vcs-Browser: http://git.debian.org/?p=collab-maint/profile-sync-daemon.git;a=summary
 
