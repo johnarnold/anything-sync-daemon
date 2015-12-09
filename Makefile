@@ -77,12 +77,14 @@ install-systemd-all: install-bin install-man install-systemd
 
 install-upstart-all: install-bin install-man install-cron install-upstart
 
-install:
-	$(Q)echo "run one of the following:"
-	$(Q)echo "  make install-systemd-all (systemd based systems)"
-	$(Q)echo "  make install-upstart-all (upstart based systems)"
-	$(Q)echo
-	$(Q)echo "or check out the Makefile for specific rules"
+#install:
+#	$(Q)echo "run one of the following:"
+#	$(Q)echo "  make install-systemd-all (systemd based systems)"
+#	$(Q)echo "  make install-upstart-all (upstart based systems)"
+#	$(Q)echo
+#	$(Q)echo "or check out the Makefile for specific rules"
+
+install: install-systemd-all
 
 uninstall-bin:
 	$(RM) "$(DESTDIR)$(BINDIR)/$(PN)"
@@ -113,12 +115,14 @@ uninstall-systemd-all: uninstall-bin uninstall-man uninstall-systemd
 
 uninstall-upstart-all: uninstall-bin uninstall-man uninstall-cron uninstall-upstart
 
-uninstall:
-	$(Q)echo "run one of the following:"
-	$(Q)echo "  make uninstall-systemd-all (systemd based systems)"
-	$(Q)echo "  make uninstall-upstart-all (upstart based systems)"
-	$(Q)echo
-	$(Q)echo "or check out the Makefile for specific rules"
+#uninstall:
+#	$(Q)echo "run one of the following:"
+#	$(Q)echo "  make uninstall-systemd-all (systemd based systems)"
+#	$(Q)echo "  make uninstall-upstart-all (upstart based systems)"
+#	$(Q)echo
+#	$(Q)echo "or check out the Makefile for specific rules"
+
+uninstall: uninstall-systemd-all
 
 clean:
 	$(RM) -f common/$(PN)
